@@ -7,7 +7,11 @@ https://github.com/magomimmo/modern-cljs/blob/master/doc/tutorial-01.md
 
 ## Usage
 
-Don't.
+    > cd resources/public/
+    > python -m SimpleHTTPServer
+    Serving HTTP on 0.0.0.0 port 8000 ...
+
+Go to http://localhost:8000/simple.html on your browser.
 
 ## License
 
