@@ -9,9 +9,8 @@
   :dependencies [[org.clojure/clojure       "1.5.1"]
                  [org.clojure/clojurescript "0.0-1878"]
                  [compojure                 "1.1.5"]
-                 ;; was not able to get python -m SimpleHTTPServer to do brepl
-                 ;; ? https://groups.google.com/forum/#!topic/clojurescript/lPbE2qA7AFw
-                 ;; [org.clojure/google-closure-library-third-party "0.0-2029"]
+                 [overtone "0.8.1" :exclusions [org.clojure/clojure
+                                                org.clojure/data.json]]
                  ]
 
   ;; lein-cljsbuild plugin to build a CLJS project

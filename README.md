@@ -7,11 +7,13 @@ https://github.com/magomimmo/modern-cljs/blob/master/doc/tutorial-01.md
 
 ## Usage
 
-    > cd resources/public/
-    > python -m SimpleHTTPServer
-    Serving HTTP on 0.0.0.0 port 8000 ...
+in one shell start the server
+    > lein cljsbuild once
+    > lein ring server
+you should hear overtone buzzing...
 
-Go to http://localhost:8000/simple.html on your browser.
+in another shell, start a repl
+    > lein trampoline cljsbuild repl-listen
 
 ## License
 

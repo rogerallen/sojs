@@ -1,5 +1,6 @@
 (ns sojs.core
   (:use compojure.core)
+  (:use overtone.live)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]))
 
@@ -18,3 +19,8 @@
 ;; adding a bunch of standard ring middleware to app-route:
 (def handler
   (handler/site app-routes))
+
+(defn test-overtone []
+  (demo 5 (* (sin-osc 0.5) (saw 440))))
+
+(test-overtone)
