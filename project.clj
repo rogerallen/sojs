@@ -4,25 +4,25 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
-  ;; CLJ source code path
   :source-paths ["src/clj"]
-  :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.clojure/clojurescript "0.0-1878"]]
+
+  :dependencies [[org.clojure/clojure       "1.5.1"]
+                 [org.clojure/clojurescript "0.0-1878"]
+                 [compojure                 "1.1.5"]
+                 ;; was not able to get python -m SimpleHTTPServer to do brepl
+                 ;; ? https://groups.google.com/forum/#!topic/clojurescript/lPbE2qA7AFw
+                 ;; [org.clojure/google-closure-library-third-party "0.0-2029"]
+                 ]
 
   ;; lein-cljsbuild plugin to build a CLJS project
-  :plugins [[lein-cljsbuild "0.3.3"]]
+  :plugins [[lein-cljsbuild "0.3.3"]
+            [lein-ring "0.8.7"]]
+
+  :ring {:handler sojs.core/handler}
 
   ;; cljsbuild options configuration
   :cljsbuild {:builds
-              [{;; CLJS source code path
-                :source-paths ["src/cljs"]
-
-                ;; Google Closure (CLS) options configuration
-                :compiler {;; CLS generated JS script filename
-                           :output-to "resources/public/js/sojs.js"
-
-                           ;; minimal JS optimization directive
+              [{:source-paths ["src/cljs"]
+                :compiler {:output-to     "resources/public/js/sojs.js"
                            :optimizations :whitespace
-
-                           ;; generated JS code prettyfication
-                           :pretty-print true}}]})
+                           :pretty-print  true}}]})
