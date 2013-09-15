@@ -36,7 +36,7 @@
                         "<p>Duration:" duration"</p>"
                         "<p>Frequency:" frequency "</p>")]
           (play-humm (read-string duration) (read-string frequency))
-          ;;text
+          ;;and go back where you started
           (ring.util.response/redirect "/play.html")))
 
   ; to serve static pages saved in resources/public directory
