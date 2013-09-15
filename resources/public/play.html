@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Play Overtone</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- play.html -->
+    <form action="play" method="post" id="playForm" novalidate>
+        <fieldset>
+            <legend>Play a note in Overtone</legend>
+
+            <div>
+              <label for="duration">Duration (seconds)</label>
+              <input type="duration" name="duration" id="duration" required>
+            </div>
+
+            <div>
+              <label for="frequency">Frequency (Hz)</label>
+              <input type="frequency" name="frequency" id="frequency" required>
+            </div>
+
+            <div>
+              <label for="submit"></label>
+              <input type="submit" value="Play &rarr;" id="submit">
+            </div>
+
+        </fieldset>
+    </form>
+    <script src="js/sojs.js"></script>
+</body>
+</html>
